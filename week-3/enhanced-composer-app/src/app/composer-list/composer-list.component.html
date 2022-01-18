@@ -1,0 +1,30 @@
+<!--
+  Title: Exercise 3.2
+  Author: Evan Durkin
+  Date: January 18, 2022
+-->
+
+<!--Container with elements-->
+<div role="main" class="container">
+  <br /><br />
+  <table class="table table-bordered">
+    <thead style="background-color: rgb(33,37,41); color: white">
+      <tr>
+        <th scope="col">Composer ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Genre</th>
+      </tr>
+    </thead>
+
+    <!--Body container for composers-->
+    <tbody>
+      <tr *ngFor="let composer of composers">
+        <td scope="row">
+          <a routerLink="/composer-details/{{ composer.composerId }}"> {{ composer.composerId }}</a>
+        </td>
+        <td scope="row">{{ composer.fullName }}</td>
+        <td>{{ composer.genre }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
