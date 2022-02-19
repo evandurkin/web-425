@@ -1,11 +1,11 @@
-// Exercise 7.3
+// Exercise 7.2
 // Author: Evan Durkin
 // Date: February 18, 2022
 
 import { Component, OnInit } from '@angular/core';
 import { SignInService } from '../sign-in.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 
 
@@ -16,8 +16,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SignInComponent implements OnInit {
 
-  signinForm: FormGroup;
-  errorMessage: string;
+  signinForm!: FormGroup;
+  errorMessage!: string;
 
   constructor( private router: Router,
               private cookieService: CookieService,
@@ -27,12 +27,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.signinForm = this.fb.group({
-      studentId: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]*$')])]
+      studentId: ''
     })
-  }
-
-  get form() {
-    return this.signinForm.controls;
   }
 
   onSubmit() {

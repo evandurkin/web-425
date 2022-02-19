@@ -5,21 +5,21 @@
     <mat-card class="mat-elevation-z8">
       <mat-card-title>Grade Entry</mat-card-title>
       <mat-card-content>
-        <form fxLayout="column" fxLayoutGap="16px" [formGroup]="transcriptForm" (ngSubmit)="onSubmit($event); transcriptForm.reset()">
+        <form fxLayout="column" fxLayoutGap="16px">
           <mat-form-field fxFlex appearance="fill">
             <mat-label>Course</mat-label>
-            <input type="text" name="txtCourse" id="txtCourse" matInput formControlName="course" />
+            <input type="text" name="txtCourse" id="txtCourse" matInput [(ngModel)]="transcriptEntry.course" />
           </mat-form-field>
 
           <!--card for grade value display-->
           <mat-form-field fxFlex appearance="fill">
             <mat-label>Grade</mat-label>
-            <mat-select formControlName="grade" name="selectGrade">
+            <mat-select [(ngModel)]="transcriptEntry.grade" name="selectGrade">
               <mat-option *ngFor="let grade of selectableGrades" [value]="grade">{{ grade }}</mat-option>
             </mat-select>
           </mat-form-field>
 
-          <button mat-raised-button type="submit" [disabled]="!transcriptForm.valid" id="btnSave">Save</button>
+          <button mat-raised-button color="primary" (click)="saveEntry()" id="btnSave">Save</button>
 
         </form>
       </mat-card-content>

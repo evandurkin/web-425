@@ -1,4 +1,4 @@
-// Title: Exercise 7.3
+// Title: Exercise 7.2
 // Author: Evan Durkin
 // Date: February 17, 2022
 
@@ -15,7 +15,7 @@ export class BaseLayoutComponent implements OnInit {
 
   assignment: string;
   constructor( private cookieService: CookieService, private router: Router) {
-    this.assignment = 'Exercise 7.3 - Form Validation';
+    this.assignment = 'Exercise 7.2 - Reactive Forms';
    }
 
   ngOnInit(): void {

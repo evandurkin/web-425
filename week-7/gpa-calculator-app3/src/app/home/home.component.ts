@@ -1,10 +1,9 @@
-// Title: Exercise 7.4
+// Title: Assignment 6.4
 // Author: Evan Durkin
-// Date: February 19, 2022
+// Date: February 9, 2022
 
 import { Component, OnInit } from '@angular/core';
 import { ITranscript } from '../transcript.interface';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -19,23 +18,17 @@ export class HomeComponent implements OnInit {
   ];
   transcriptEntries: Array<ITranscript> = [];
   gpaTotal: number = 0;
-  transcriptForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-
+  constructor() {
+    this.transcriptEntry = {} as ITranscript;
   }
 
   ngOnInit(): void {
-    this.transcriptForm = this.fb.group({ course: ['', Validators.required ], grade: ['', Validators.required]});
   }
 
-  get form() {
-    return this.transcriptForm.controls;
-  }
-
-  onSubmit(event: { currentTarget: { reset: () => void; }; }) {
-    this.transcriptEntries.push({ course: this.form.course.value, grade: this.form.grade.value})
-    event.currentTarget.reset();
+  saveEntry() {
+    this.transcriptEntries.push(this.transcriptEntry);
+    this.transcriptEntry = {} as ITranscript;
   }
 
   calculateResults() {
