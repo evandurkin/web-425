@@ -1,3 +1,7 @@
+// Title: Exercise 7.3
+// Author: Evan Durkin
+// Date: February 19, 2022
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

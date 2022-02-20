@@ -1,6 +1,6 @@
-// Title: Exercise 7.2
+// Title: Exercise 7.3
 // Author: Evan Durkin
-// Date: February 17, 2022
+// Date: February 19, 2022
 
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';

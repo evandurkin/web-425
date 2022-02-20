@@ -1,6 +1,6 @@
-// Exercise 7.2
+// Title: Exercise 7.3
 // Author: Evan Durkin
-// Date: February 18, 2022
+// Date: February 19, 2022
 
 import { Component, OnInit } from '@angular/core';
 import { SignInService } from '../sign-in.service';

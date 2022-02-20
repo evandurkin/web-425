@@ -1,6 +1,6 @@
-// Title: Exercise 6.3 - Layouts
+// Title: Exercise 7.3
 // Author: Evan Durkin
-// Date: February 9, 2022
+// Date: February 19, 2022
 
 import { Component, OnInit } from '@angular/core';
 
